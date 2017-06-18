@@ -3,10 +3,16 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     let service = new BusStopService();
+    try {
+      return  Ember.RSVP.hash({
+        stops: service.getAllStops()
+      });
+    }
+    catch(err) {
+      this.transitionTo('error');
+      //alert('error')
+    }
 
-    return  Ember.RSVP.hash({
-      stops: service.getAllStops()
-    });
   },
   actions: {
     searchStop(search) {
