@@ -1,0 +1,37 @@
+<div class="section no-pad-bot" id="index-banner">
+  <div class="container">
+    <h1 class="header center orange-text">Support Your Bus Stop</h1>
+    <div class="row center">
+      <h5 class="header col s12 light">Find any bus stop you want to support and donate!</h5>
+    </div>
+    <div class="row center">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            {{input value=search type='number'}}
+            <button class="waves-effect waves-light btn blue" type="submit" {{action 'searchStop' search}}>search</button>
+            <span class="clear-search" {{action 'clearSearch'}}>Clear Search</span>
+            <label for="textarea1">Enter Your Bus Stop Number</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="section">
+    <div class="row">
+      {{#if filteredContent}}
+        {{#each filteredContent as |stop|}}
+          {{bus-stop stop=stop donate='donate'}}
+        {{/each}}
+      {{else}}
+        <div class="col s12 m12">
+          <h4><i class="material-icons">search</i> Your search <strong>{{search}}</strong> did not match any Bus Stop Number</h4>
+          <h5>Try a different Bus Stop Number like <button class="btn orange" {{action 'searchStop' 2}}>2</button> or <button class="btn orange" {{action 'searchStop' 9}}>9</button></h5>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+</div>
+{{outlet}}

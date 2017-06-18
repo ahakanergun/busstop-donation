@@ -6,6 +6,9 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  app.import('vendor/assets/js/BusStopService.js');
+  app.import('bower_components/materialize/dist/js/materialize.js');
+  app.import('bower_components/materialize/dist/css/materialize.css');
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
