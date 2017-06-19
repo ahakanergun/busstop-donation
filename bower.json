@@ -1,0 +1,23 @@
+{
+  "name": "busstop-donation",
+  "description": "Small description for busstop-donation goes here",
+  "main": "",
+  "authors": [
+    "ahmethakan <ahmet.ergun@enocta.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ahakanergun/login",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.98.2"
+  },
+  "devDependencies": {
+    "materialize": "^0.98.2"
+  }
+}
